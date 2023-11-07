@@ -2,11 +2,9 @@ package hello.multimodule.post.presentation;
 
 import hello.multimodule.post.application.PostService;
 import hello.multimodule.post.domain.PostCreate;
+import hello.multimodule.post.presentation.response.PostsResponse;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/posts")
 @RestController
@@ -23,5 +21,12 @@ public class PostController {
         return ResponseEntity
                 .ok()
                 .build();
+    }
+
+    @GetMapping
+    public ResponseEntity<PostsResponse> getAll() {
+        return ResponseEntity
+                .ok()
+                .body(PostsResponse.from(postService.getAll()));
     }
 }

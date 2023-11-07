@@ -28,4 +28,8 @@ public class PostEntity {
     public static PostEntity from(Post post) {
         return new PostEntity(post.id(), post.title(), post.content());
     }
+
+    public Post toModel() {
+        return new Post(id, title, content);
+    }
 }
