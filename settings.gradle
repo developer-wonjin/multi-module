@@ -17,5 +17,6 @@ rootProject.name = 'multi-module'
 
 include(
         "api",
-        "infra:database"
+        "infra:database",
+        "domain"
 )

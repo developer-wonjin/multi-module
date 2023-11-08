@@ -1,11 +1,13 @@
 package hello.multimodule.post.infra;
 
-import hello.multimodule.post.application.port.PostRepository;
-import hello.multimodule.post.domain.Post;
+import hello.multimodule.post.Post;
+import hello.multimodule.post.PostRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Slf4j
 @Repository
 public class PostRepositoryImpl implements PostRepository {
     private final PostEntityRepository postEntityRepository;

@@ -1,6 +1,4 @@
-package hello.multimodule.post.application.port;
-
-import hello.multimodule.post.domain.Post;
+package hello.multimodule.post;
 
 import java.util.List;
 

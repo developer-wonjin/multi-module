@@ -1,7 +1,7 @@
 package hello.multimodule.post.presentation;
 
+import hello.multimodule.post.PostCreate;
 import hello.multimodule.post.application.PostService;
-import hello.multimodule.post.domain.PostCreate;
 import hello.multimodule.post.presentation.response.PostsResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -8,7 +8,8 @@ tasks.named("jar") {
 
 dependencies {
     // module
-    implementation project(':infra:database')
+    runtimeOnly project(':infra:database')
+    implementation project(':domain')
 
     // web
     implementation 'org.springframework.boot:spring-boot-starter-web'

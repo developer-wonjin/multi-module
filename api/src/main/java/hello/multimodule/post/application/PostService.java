@@ -1,8 +1,8 @@
 package hello.multimodule.post.application;
 
-import hello.multimodule.post.application.port.PostRepository;
-import hello.multimodule.post.domain.Post;
-import hello.multimodule.post.domain.PostCreate;
+import hello.multimodule.post.Post;
+import hello.multimodule.post.PostCreate;
+import hello.multimodule.post.PostRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

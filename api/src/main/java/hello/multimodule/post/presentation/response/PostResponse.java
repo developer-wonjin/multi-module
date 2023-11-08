@@ -1,6 +1,6 @@
 package hello.multimodule.post.presentation.response;
 
-import hello.multimodule.post.domain.Post;
+import hello.multimodule.post.Post;
 import lombok.Getter;
 
 @Getter
