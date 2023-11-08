@@ -5,7 +5,7 @@ plugins {
 }
 
 java {
-    sourceCompatibility = '17'
+    sourceCompatibility = javaVersion
 }
 
 // root Project를 포함한 모든 프로젝트에 적용되는 설정
