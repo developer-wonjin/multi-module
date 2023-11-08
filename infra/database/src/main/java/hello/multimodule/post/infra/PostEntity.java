@@ -1,6 +1,6 @@
 package hello.multimodule.post.infra;
 
-import hello.multimodule.post.domain.Post;
+import hello.multimodule.post.Post;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

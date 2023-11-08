@@ -16,5 +16,7 @@ pluginManagement {
 rootProject.name = 'multi-module'
 
 include(
-        "api"
+        "api",
+        "infra:database",
+        "domain"
 )

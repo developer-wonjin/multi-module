@@ -1,7 +1,7 @@
 package hello.multimodule.mock;
 
-import hello.multimodule.post.application.port.PostRepository;
-import hello.multimodule.post.domain.Post;
+import hello.multimodule.post.PostRepository;
+import hello.multimodule.post.Post;
 
 import java.util.ArrayList;
 import java.util.Collections;
