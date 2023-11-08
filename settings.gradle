@@ -15,4 +15,6 @@ pluginManagement {
 
 rootProject.name = 'multi-module'
 
-include()
+include(
+        "api"
+)
