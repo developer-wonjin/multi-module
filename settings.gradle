@@ -1,1 +1,20 @@
+// plugin의 버전을 세팅한다
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "org.springframework.boot") {
+                useVersion(springBootVersion)
+            }
+
+            if (requested.id.id == "io.spring.dependency-management") {
+                useVersion(springDependencyManagementVersion)
+            }
+        }
+    }
+}
+
 rootProject.name = 'multi-module'
+
+include(
+        "api"
+)
