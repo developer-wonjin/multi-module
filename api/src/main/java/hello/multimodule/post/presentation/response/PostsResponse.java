@@ -1,18 +1,9 @@
 package hello.multimodule.post.presentation.response;
 
 import hello.multimodule.post.Post;
-import lombok.Getter;
-
 import java.util.List;
 
-@Getter
-public class PostsResponse {
-    private final List<PostResponse> posts;
-
-    private PostsResponse(List<PostResponse> posts) {
-        this.posts = posts;
-    }
-
+public record PostsResponse(List<PostResponse> posts) {
     public static PostsResponse from(List<Post> posts) {
         List<PostResponse> postResponses = posts.stream()
                 .map(PostResponse::from)
