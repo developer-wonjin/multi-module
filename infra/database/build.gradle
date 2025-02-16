@@ -1,8 +1,8 @@
 dependencies {
     // module
-    implementation project(':domain')
+    implementation project(':domain')  // 'domain' 모듈을 의존성으로 추가
 
-    // database
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    runtimeOnly 'com.h2database:h2'
+    // database 관련 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'  // Spring Boot JPA Starter 의존성 추가
+    runtimeOnly 'com.h2database:h2'  // H2 데이터베이스를 런타임에만 의존성 추가
 }

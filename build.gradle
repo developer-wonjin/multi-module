@@ -1,26 +1,27 @@
 plugins {
-    id 'java'
-    id 'java-library'
-    id 'org.springframework.boot' version '3.1.5' apply false
-    id 'io.spring.dependency-management' version '1.1.3' apply false
+    id 'java'  // Java 플러그인 추가
+    id 'java-library'  // Java 라이브러리 플러그인 추가
+    id 'org.springframework.boot' version '3.1.5' apply false  // Spring Boot 플러그인 추가, root 프로젝트에는 적용하지 않음
+    id 'io.spring.dependency-management' version '1.1.3' apply false  // Spring Dependency Management 플러그인 추가, root 프로젝트에는 적용하지 않음
 }
 
 java {
-    sourceCompatibility = javaVersion
+    sourceCompatibility = javaVersion  // Java 버전 설정 (외부에서 정의된 javaVersion 변수 사용)
 }
 
 // root Project를 포함한 모든 프로젝트에 적용되는 설정
 allprojects {
-    group = projectGroup
-    version = applicationVersion
+    group = projectGroup  // 프로젝트 그룹 (외부에서 정의된 projectGroup 변수 사용)
+    version = applicationVersion  // 프로젝트 버전 (외부에서 정의된 applicationVersion 변수 사용)
 
     repositories {
-        mavenCentral()
+        mavenCentral()  // Maven Central repository 사용
     }
 }
 
 // root Project를 제외한 모든 subProject에 적용되는 설정
 subprojects {
+    // 각 서브프로젝트에 플러그인 적용
     apply {
         plugin 'java'
         plugin 'java-library'
@@ -30,38 +31,37 @@ subprojects {
 
     configurations {
         compileOnly {
-            extendsFrom annotationProcessor
+            extendsFrom annotationProcessor  // compileOnly에서 annotationProcessor를 상속받음
         }
     }
 
     dependencyManagement {
         imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudDependencyVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudDependencyVersion}"  // Spring Cloud 의존성 관리
         }
     }
 
     dependencies {
-        // lombok
+        // Lombok 의존성 추가
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
 
-        // test
+        // 테스트 의존성 추가
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 
+    // bootJar 태스크 비활성화 (Spring Boot jar 생성 비활성화)
     tasks.named("bootJar") {
         enabled = false
     }
 
+    // jar 태스크 활성화
     tasks.named("jar") {
         enabled = true
     }
 
+    // 테스트는 JUnit Platform 사용
     tasks.named('test') {
         useJUnitPlatform()
     }
 }
-
-
-
-
